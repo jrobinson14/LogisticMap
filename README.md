@@ -1,6 +1,6 @@
 # LogisticMap
 
-Logistic map visualizations made for Complex Adaptive Systems class
+Logistic map functions made for Complex Adaptive Systems class and to better understand logistic map equation and chaos
 
 # Map.py
 
