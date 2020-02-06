@@ -12,7 +12,7 @@ yvals = []
 
 #iterate over range 0-4, increment by .001 (decreaseing interval increases resolution of graph
 # as well as computation time)
-for beta in numpy.arange(0,4,0.001):
+for beta in numpy.arange(0,9/10,0.001):
     print(beta)
     xold = 0.5
     #transient, itereate and update xnew value
@@ -33,7 +33,7 @@ for beta in numpy.arange(0,4,0.001):
 
 #create graph
 scatter(xvals, yvals, s = .2)
-xlim(0.9, 4.1)
+xlim(0.01, 4.1)
 ylim(-0.1,1.1)
 show()
 
