@@ -7,7 +7,6 @@ import numpy
 
 xVal = []
 time = []
-xNew = 0.2 #initialized value for X[0]
 
 #Logisitic map function
 def logMap(r,x):
@@ -15,17 +14,35 @@ def logMap(r,x):
 
 #iterate through each time step, calculate X[t]
 #r value can be changed (first param of logMap() function
-for i in numpy.arange(0, 1000, 0.01):
-    xNew = logMap(3.9, xNew)
-    print(xNew)
+xNew = 0.3 #value for initial condition
+for i in numpy.arange(0, 100, 1):
+    xNew = logMap(2.9, xNew)
+    #print(xNew)
     xVal.append(xNew)
     time.append(i)
 
-#create graph
+#create graph 1
 scatter(time, xVal, s = .2)
-plot(time, xVal)
-xlim(0.001, 10)
-ylim(-0.1,1.1)
+plot(time, xVal, color = "blue")
+
+
+#create second series, same r value but differeant initial condition
+xNew = 0.5
+xVal = []
+time = []
+for i in numpy.arange(0, 100, 1):
+    xNew = logMap(2.9, xNew)
+    #print(xNew)
+    xVal.append(xNew)
+    time.append(i)
+
+
+
+#create graph 2
+scatter(time, xVal, s = .2)
+plot(time, xVal, color = "red", linestyle = 'dashed')
+xlim(0, 100)
+ylim(0.5,0.8)
 xlabel("Time")
 ylabel("X[t]")
 show()
